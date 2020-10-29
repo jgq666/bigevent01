@@ -1,6 +1,17 @@
 $(function () {
     //1.获取用户信息
     getUserInfo()
+    var layer = layui.layer
+    $('#btnLogout').on('click', function () {
+        layer.confirm('是否确认退出', { icon: 3, title: '提示' }, function (index) {
+            //清空本地token
+            localStorage.removeItem('token')
+            // 页面跳转
+            location.href = "/login.html"
+            // 关闭询问框
+            layer.close(index);
+        });
+    })
 })
 
 //获取用户信息
