@@ -29,7 +29,7 @@ function getUserInfo() {
         }
     })
 }
-
+//渲染用户
 function renderAvatar(user) {
     var name = user.nickname || user.username
     $('#welcome').html('欢迎&nbsp;&nbsp;' + name)
